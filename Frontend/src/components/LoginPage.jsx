@@ -18,7 +18,7 @@ const LoginPage = () => {
     try {
       // Send a POST request to the backend login route
       const response = await axios.post(
-        "http://localhost:3000/login",
+        "https://deployed-backend-62rm.onrender.com/login",
         { email, password },
         { withCredentials: false } // hamesha false rakho because of CORS policy error
       );

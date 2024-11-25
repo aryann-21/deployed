@@ -16,7 +16,7 @@ const RideHistoryPage = () => {
       const fetchRideHistory = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:3000/ride-history/${user.email}` // Adjust API endpoint as needed
+            `https://deployed-backend-62rm.onrender.com/ride-history/${user.email}` // Adjust API endpoint as needed
           );
           const sortedHistory = response.data.sort(
             (a, b) => new Date(b.date) - new Date(a.date)

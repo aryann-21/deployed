@@ -13,7 +13,7 @@ const ContactPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/send-whatsapp", {
+      const response = await axios.post("https://deployed-backend-62rm.onrender.com/send-whatsapp", {
         name,
         email,
         message,

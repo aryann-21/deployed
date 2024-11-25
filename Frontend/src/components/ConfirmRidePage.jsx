@@ -21,7 +21,7 @@ const ConfirmRidePage = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/send-whatsapp", {
+      const response = await axios.post("https://deployed-backend-62rm.onrender.com/send-whatsapp", {
         name: name,
         email: email,
         message: message,

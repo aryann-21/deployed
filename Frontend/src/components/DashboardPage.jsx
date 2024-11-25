@@ -23,7 +23,7 @@ const DashboardPage = () => {
   const handleLogout = async () => {
     try {
       // Send a POST request to the backend logout route
-      await axios.get('http://localhost:3000/logout');
+      await axios.get('https://deployed-backend-62rm.onrender.com/logout');
 
       // Clear user data from context
       setUser(null);

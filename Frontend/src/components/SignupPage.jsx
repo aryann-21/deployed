@@ -20,7 +20,7 @@ const SignupPage = () => {
     try {
       // Send a POST request to the backend signup route
       const response = await axios.post(
-        "http://localhost:3000/signup", // Your backend signup endpoint
+        "https://deployed-backend-62rm.onrender.com/signup", // Your backend signup endpoint
         { name, email, password, phone }
       );
 

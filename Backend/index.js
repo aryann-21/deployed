@@ -30,7 +30,7 @@ const phoneNumber = process.env.PHONE_NUMBER;  // Replace with your Twilio Phone
 const client = twilio(accountSid, authToken);
 
 app.post('/send-whatsapp', (req, res) => {
-  const { name, email, message, driverName, driverPhone, cabNumber, dropLocation, date, time, numberOfPeople, payment } = req.body;
+  const { name, email, message, driverName, driverPhone, cabNumber, dropLocation, date, time, numberOfPeople, payment, uName, uPhone } = req.body;
 
   // If ride details and driver phone number are provided, send the ride details to the driver
   if (driverPhone) {
@@ -39,6 +39,10 @@ app.post('/send-whatsapp', (req, res) => {
 
       🧑‍✈️ *Driver Name:* ${driverName}
       🚖 *Cab Number:* ${cabNumber}
+
+      🧑‍✈️ *passenger Name:* ${uName}
+      📞 *Passenger Phone:* ${uPhone}
+      
       📍 *Drop Location:* ${dropLocation}
       📅 *Pickup Date:* ${date}
       🕑 *Pickup Time:* ${time}
@@ -65,7 +69,7 @@ app.post('/send-whatsapp', (req, res) => {
     .catch((error) => {
       console.error('Error sending ride details:', error);
     });
-  }
+  } 
 
   // If contact form details are provided, send the contact form to your WhatsApp
   if (message !== 'debugging' && name !== 'debugger' && email) {

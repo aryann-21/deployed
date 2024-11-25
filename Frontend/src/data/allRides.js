@@ -8,6 +8,13 @@ export const allRides = [
     isAvailable: true,
   },
   {
+    driverName: "Ashish Nolan",
+    driverPhone: "9772430861",
+    cabNumber: "PB 08 1060",
+    availableSeats: 5,
+    isAvailable: true,
+  },
+  {
     driverName: "Nischay",
     driverPhone: "9876991353",
     cabNumber: "PB 02 3456",

@@ -1,8 +1,10 @@
 // models/userModel.js
+require('dotenv').config();
 const mongoose = require('mongoose');
 
 // Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/campuscabs')
+const URI = process.env.MONGODB_URI;
+mongoose.connect(URI)
   .then(() => console.log("MongoDB connected successfully"))
   .catch(err => console.error("MongoDB connection error: ", err));
 

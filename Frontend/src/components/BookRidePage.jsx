@@ -70,7 +70,7 @@ const BookRidePage = ({ onFilterRides }) => {
       {/* Left side - Booking form */}
       <div className="w-full md:w-1/2 p-4 md:p-6 flex flex-col justify-center items-center">
         <h1 className="text-gray-800 text-xl md:text-3xl font-semibold mb-2 text-center">
-          {user ? `Welcome, ${user.name}!` : 'Welcome!'}
+          {user ? `Welcome, ${user.name}!` : 'Welcome, Guest'}
         </h1>
         <h2 className="text-gray-800 text-2xl md:text-3xl font-bold mb-4 text-center">
           Go anywhere with Campus<span className="text-yellow-500">Cabs</span>

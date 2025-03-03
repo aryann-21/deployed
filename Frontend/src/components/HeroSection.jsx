@@ -27,7 +27,10 @@ const HeroSection = () => {
       {/* Navigation */}
       <div className="fixed top-0 z-50 w-full flex items-center justify-between px-8 py-6 bg-gray-900 text-white text-[21px] shadow-md">
         {/* Left side - Logo */}
-        <div className="text-4xl cursor-pointer font-semibold" onClick={scrollToTop}>
+        <div
+          className="text-4xl cursor-pointer font-semibold"
+          onClick={scrollToTop}
+        >
           Campus<span className="text-yellow-400">Cabs</span>
         </div>
 
@@ -68,6 +71,14 @@ const HeroSection = () => {
               className="border-[3px] border-blue-300 text-blue-300 px-5 py-2 rounded-full hover:bg-black hover:border-blue-400 hover:text-blue-400 duration-150"
             >
               Sign Up
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/dashboard/book-ride"
+              className="border-[3px] border-green-500 text-green-500 px-5 py-2 rounded-full hover:bg-black hover:border-green-600 hover:text-green-600 duration-150"
+            >
+              View as Guest
             </Link>
           </li>
         </ul>
@@ -115,7 +126,7 @@ const HeroSection = () => {
                   "Your Trusted Campus Ride Awaits",
                   "Enjoy student-friendly fares",
                   "Seamlessly Connect with Fellow Students",
-                  "Prioritizing Safety in Every Ride"
+                  "Prioritizing Safety in Every Ride",
                 ],
                 autoStart: true,
                 loop: true,

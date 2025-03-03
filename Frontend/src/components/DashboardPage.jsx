@@ -33,6 +33,7 @@ const DashboardPage = () => {
       // Redirect user to login page after logout
       navigate('/');
     } catch (error) {
+      navigate('/');
       console.error("Logout failed:", error);
     }
   };

@@ -1,9 +1,7 @@
-import React from 'react';
-import HeroSection from './HeroSection';
-import FeaturesSection from './FeaturesSection';
-import HowItWorksSection from './HowItWorksSection';
-import Footer from './Footer';
-import AboutUsSection from './AboutUsSection';
+import HeroSection from "./HeroSection"
+import HowItWorksSection from "./HowItWorksSection"
+import Footer from "./Footer"
+import AboutUsSection from "./AboutUsSection"
 
 const LandingPage = () => {
   return (
@@ -14,7 +12,8 @@ const LandingPage = () => {
       <AboutUsSection />
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default LandingPage;
+export default LandingPage
+

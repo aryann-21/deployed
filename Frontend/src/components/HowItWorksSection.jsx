@@ -9,9 +9,9 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-white text-center">
-      <h2 className="text-3xl font-bold mb-8">How It Works</h2>
-      <div className="flex justify-center space-x-8">
+    <section className="py-8 sm:py-12 md:py-16 bg-white text-center px-4">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">How It Works</h2>
+      <div className="flex flex-col sm:flex-row justify-center items-center sm:items-stretch sm:space-x-4 md:space-x-8 space-y-6 sm:space-y-0">
         {steps.map((step, index) => (
           <StepCard key={index} step={step.step} title={step.title} description={step.description} />
         ))}

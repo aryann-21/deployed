@@ -84,31 +84,31 @@ const ConfirmRidePage = () => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg max-w-4xl mx-auto mt-10">
+    <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg max-w-4xl mx-auto mt-4 sm:mt-10">
       <ToastContainer />
-      <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4 sm:mb-6 text-center">
         Confirm Your Ride
       </h2>
-      <div className="flex flex-wrap justify-between mb-6 text-[17px]">
+      <div className="flex flex-col md:flex-row flex-wrap justify-between mb-4 sm:mb-6 text-sm sm:text-base md:text-[17px]">
         {/* Left Column - Rider Details */}
-        <div className="w-full md:w-1/2 p-4 space-y-4">
-          <div className="px-4 py-2 bg-gray-100 rounded-md shadow-sm">
+        <div className="w-full md:w-1/2 p-2 sm:p-4 space-y-2 sm:space-y-4">
+          <div className="px-3 sm:px-4 py-2 bg-gray-100 rounded-md shadow-sm">
             <p className="font-semibold text-gray-900">Driver Name:</p>
             <p className="text-gray-800">{ride.driverName}</p>
           </div>
-          <div className="px-4 py-2 bg-gray-100 rounded-md shadow-sm">
+          <div className="px-3 sm:px-4 py-2 bg-gray-100 rounded-md shadow-sm">
             <p className="font-semibold text-gray-900">Driver Phone:</p>
             <p className="text-gray-800">{ride.driverPhone}</p>
           </div>
-          <div className="px-4 py-2 bg-gray-100 rounded-md shadow-sm">
+          <div className="px-3 sm:px-4 py-2 bg-gray-100 rounded-md shadow-sm">
             <p className="font-semibold text-gray-900">Cab Number:</p>
             <p className="text-gray-800">{ride.cabNumber}</p>
           </div>
-          <div className="px-4 py-2 bg-gray-100 rounded-md shadow-sm">
+          <div className="px-3 sm:px-4 py-2 bg-gray-100 rounded-md shadow-sm">
             <p className="font-semibold text-gray-900">Available Seats:</p>
             <p className="text-gray-800">{ride.availableSeats}</p>
           </div>
-          <div className="px-4 py-2 bg-gray-100 rounded-md shadow-sm">
+          <div className="px-3 sm:px-4 py-2 bg-gray-100 rounded-md shadow-sm">
             <p className="font-semibold text-gray-900">Total Fare:</p>
             <p className="text-green-600">
               Rs {ride.fare * ride.numberOfPeople}/-
@@ -117,8 +117,8 @@ const ConfirmRidePage = () => {
         </div>
 
         {/* Right Column - Ride Details */}
-        <div className="w-full md:w-1/2 p-4 space-y-4">
-          <div className="px-4 py-2 bg-gray-100 rounded-md shadow-sm">
+        <div className="w-full md:w-1/2 p-2 sm:p-4 space-y-2 sm:space-y-4 mt-4 md:mt-0">
+          <div className="px-3 sm:px-4 py-2 bg-gray-100 rounded-md shadow-sm">
             <p className="font-semibold text-gray-900">Availability:</p>
             <p
               className={`text-gray-900 ${
@@ -128,28 +128,28 @@ const ConfirmRidePage = () => {
               {ride.isAvailable ? "YES" : "NO"}
             </p>
           </div>
-          <div className="px-4 py-2 bg-gray-100 rounded-md shadow-sm">
+          <div className="px-3 sm:px-4 py-2 bg-gray-100 rounded-md shadow-sm">
             <p className="font-semibold text-gray-900">Drop Location:</p>
             <p className="text-gray-800">{ride.dropLocation}</p>
           </div>
-          <div className="px-4 py-2 bg-gray-100 rounded-md shadow-sm">
+          <div className="px-3 sm:px-4 py-2 bg-gray-100 rounded-md shadow-sm">
             <p className="font-semibold text-gray-900">Number of People:</p>
             <p className="text-gray-800">{ride.numberOfPeople}</p>
           </div>
-          <div className="px-4 py-2 bg-gray-100 rounded-md shadow-sm">
+          <div className="px-3 sm:px-4 py-2 bg-gray-100 rounded-md shadow-sm">
             <p className="font-semibold text-gray-900">Pickup Time:</p>
             <p className="text-gray-800">{ride.time}</p>
           </div>
-          <div className="px-4 py-2 bg-gray-100 rounded-md shadow-sm">
+          <div className="px-3 sm:px-4 py-2 bg-gray-100 rounded-md shadow-sm">
             <p className="font-semibold text-gray-900">Pickup Date:</p>
             <p className="text-gray-800">{ride.date}</p>
           </div>
         </div>
       </div>
-      <div className="text-center">
+      <div className="text-center mt-6">
         <button
           onClick={handleConfirm}
-          className="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-blue-600 transition duration-150"
+          className="bg-blue-500 text-white font-bold py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-md hover:bg-blue-600 transition duration-150"
         >
           Confirm Ride
         </button>

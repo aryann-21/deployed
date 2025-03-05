@@ -14,9 +14,9 @@ const FeaturesSection = forwardRef((props, ref) => {
   ];
 
   return (
-    <section ref={ref} className="py-16 px-16 bg-gray-100 text-center">
-      <h2 className="text-3xl font-bold mb-8">Why Choose CampusCabs?</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+    <section ref={ref} className="py-8 sm:py-12 md:py-16 px-4 sm:px-8 md:px-16 bg-gray-100 text-center">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Why Choose CampusCabs?</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
         {features.map((feature, index) => (
           <FeatureCard key={index} title={feature.title} description={feature.description} />
         ))}

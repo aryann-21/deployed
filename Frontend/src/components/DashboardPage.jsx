@@ -14,6 +14,7 @@ import axios from "axios"; // Import axios for making API calls
 const DashboardPage = () => {
   const [activeTab, setActiveTab] = useState("book-ride");
   const [filteredRides, setFilteredRides] = useState([]);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
 
   // Get user details from context
@@ -21,6 +22,7 @@ const DashboardPage = () => {
   const userEmail = user?.email; // Access the user's email
 
   const handleLogout = async () => {
+    if(user) {
     try {
       // Send a POST request to the backend logout route
       await axios.get('https://deployed-backend-62rm.onrender.com/logout');
@@ -35,6 +37,9 @@ const DashboardPage = () => {
     } catch (error) {
       navigate('/');
       console.error("Logout failed:", error);
+    }}
+    else {
+      navigate('/');
     }
   };
 
@@ -53,21 +58,42 @@ const DashboardPage = () => {
     });
   };
 
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   return (
-    <div className="flex h-screen">
-      {/* Sidebar */}
-      <aside className="fixed top-0 left-0 w-64 h-full bg-white shadow-lg p-6 flex flex-col justify-between">
+    <div className="flex h-screen relative">
+      {/* Mobile Sidebar Toggle Button */}
+      <button 
+        className="fixed top-4 left-4 z-50 md:hidden bg-white p-2 rounded-md shadow-md"
+        onClick={toggleSidebar}
+      >
+        <span className="material-icons">
+          {sidebarOpen ? 'close' : 'menu'}
+        </span>
+      </button>
+
+      {/* Sidebar - Fixed on desktop, slide-in on mobile */}
+      <aside 
+        className={`${
+          sidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
+        } transition-transform duration-300 fixed md:static top-0 left-0 w-64 h-full bg-white shadow-lg p-6 flex flex-col justify-between z-40`}
+      >
         <div>
           {/* Logo/Header */}
           <div className="flex items-center mb-6">
             <span className="material-icons mr-3">dashboard</span>
-            <h2 className="text-2xl font-bold">Dashboard</h2>
+            <h2 className="text-xl sm:text-2xl font-bold">Dashboard</h2>
           </div>
           <ul>
             <li className="mb-4">
               <Link
                 to="book-ride"
-                onClick={() => setActiveTab("book-ride")}
+                onClick={() => {
+                  setActiveTab("book-ride");
+                  setSidebarOpen(false);
+                }}
                 className={`w-full flex items-center text-left p-2 rounded-lg ${
                   activeTab === "book-ride"
                     ? "bg-blue-100 text-blue-500"
@@ -81,7 +107,10 @@ const DashboardPage = () => {
             <li className="mb-4">
               <Link
                 to="ride-history"
-                onClick={() => setActiveTab("ride-history")}
+                onClick={() => {
+                  setActiveTab("ride-history");
+                  setSidebarOpen(false);
+                }}
                 className={`w-full flex items-center text-left p-2 rounded-lg ${
                   activeTab === "ride-history"
                     ? "bg-blue-100 text-blue-500"
@@ -92,24 +121,13 @@ const DashboardPage = () => {
                 Ride History
               </Link>
             </li>
-            {/* <li className="mb-4">
-              <Link
-                to="messages"
-                onClick={() => setActiveTab("messages")}
-                className={`w-full flex items-center text-left p-2 rounded-lg ${
-                  activeTab === "messages"
-                    ? "bg-blue-100 text-blue-500"
-                    : "text-gray-700"
-                } hover:bg-blue-50 hover:text-blue-500`}
-              >
-                <span className="material-icons mr-3">message</span>
-                Messages
-              </Link>
-            </li> */}
             <li className="mb-4">
               <Link
                 to="available-rides"
-                onClick={() => setActiveTab("available-rides")}
+                onClick={() => {
+                  setActiveTab("available-rides");
+                  setSidebarOpen(false);
+                }}
                 className={`w-full flex items-center text-left p-2 rounded-lg ${
                   activeTab === "available-rides"
                     ? "bg-blue-100 text-blue-500"
@@ -123,7 +141,10 @@ const DashboardPage = () => {
             <li className="mb-4">
               <Link
                 to="profile"
-                onClick={() => setActiveTab("profile")}
+                onClick={() => {
+                  setActiveTab("profile");
+                  setSidebarOpen(false);
+                }}
                 className={`w-full flex items-center text-left p-2 rounded-lg ${
                   activeTab === "profile"
                     ? "bg-blue-100 text-blue-500"
@@ -167,7 +188,7 @@ const DashboardPage = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 ml-64 p-6 overflow-y-auto">
+      <main className="flex-1 md:ml-64 p-4 sm:p-6 overflow-y-auto pt-16 md:pt-6">
         {/* Tab Content */}
         <Routes>
           <Route

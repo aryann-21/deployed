@@ -56,11 +56,11 @@ const BookRidePage = ({ onFilterRides }) => {
     return <div>Loading...</div>;
   }
 
-  if (!user) {
-    // If user is not logged in, redirect to login page
-    navigate('/login');
-    return null;
-  }
+  // if (!user) {
+  //   // If user is not logged in, redirect to login page
+  //   navigate('/login');
+  //   return null;
+  // }
 
   // Get today's date in yyyy-mm-dd format
   const today = new Date().toISOString().split('T')[0];
